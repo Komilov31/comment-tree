@@ -123,13 +123,13 @@ GOOSE_MIGRATION_DIR=migrations
 
 **Примеры cURL:**
 
-# Создание корневого комментария
+### Создание корневого комментария
 ```bash
 curl -X POST http://localhost:8080/comments \
   -H "Content-Type: application/json" \
   -d '{"text": "Это мой первый комментарий"}'
 ```
-# Создание ответа на комментарий
+### Создание ответа на комментарий
 ```bash
 curl -X POST http://localhost:8080/comments \
   -H "Content-Type: application/json" \
@@ -162,12 +162,12 @@ curl http://localhost:8080/comments/all
 curl "http://localhost:8080/comments"
 ```
 
-# Получение комментариев с пагинацией
+### Получение комментариев с пагинацией
 ```bash
 curl "http://localhost:8080/comments?page=1&limit=10"
 ```
 
-# Получение ответов на конкретный комментарий
+### Получение ответов на конкретный комментарий
 ```bash
 curl "http://localhost:8080/comments?parent=1"
 ```
