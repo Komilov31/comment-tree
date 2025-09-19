@@ -116,20 +116,21 @@ GOOSE_MIGRATION_DIR=migrations
 **Request Body:**
 ```json
 {
-  "parent_id": 1,  // опционально, для создания ответа
+  "parent_id": 1,
   "text": "Текст комментария"
 }
 ```
 
 **Примеры cURL:**
 
-```bash
 # Создание корневого комментария
+```bash
 curl -X POST http://localhost:8080/comments \
   -H "Content-Type: application/json" \
   -d '{"text": "Это мой первый комментарий"}'
-
+```
 # Создание ответа на комментарий
+```bash
 curl -X POST http://localhost:8080/comments \
   -H "Content-Type: application/json" \
   -d '{"parent_id": 1, "text": "Это ответ на комментарий"}'
@@ -156,14 +157,18 @@ curl http://localhost:8080/comments/all
 - `limit` (опционально): количество комментариев на странице
 
 **Пример cURL:**
-```bash
 # Получение всех комментариев
+```bash
 curl "http://localhost:8080/comments"
+```
 
 # Получение комментариев с пагинацией
+```bash
 curl "http://localhost:8080/comments?page=1&limit=10"
+```
 
 # Получение ответов на конкретный комментарий
+```bash
 curl "http://localhost:8080/comments?parent=1"
 ```
 
