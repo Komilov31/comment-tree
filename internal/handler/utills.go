@@ -25,17 +25,11 @@ func parserQueryParameters(params url.Values) (*dto.CommentsPagination, error) {
 		}
 
 		if param == "page" && len(value) != 0 {
-			page, err = strconv.Atoi(value[0])
-			if err != nil {
-				return nil, fmt.Errorf("invalid page was provided: %s", err.Error())
-			}
+			page, _ = strconv.Atoi(value[0])
 		}
 
 		if param == "limit" && len(value) != 0 {
-			limit, err = strconv.Atoi(value[0])
-			if err != nil {
-				return nil, fmt.Errorf("invalid limit was provided: %s", err.Error())
-			}
+			limit, _ = strconv.Atoi(value[0])
 		}
 	}
 
